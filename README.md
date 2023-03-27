@@ -8,6 +8,13 @@ NOTE: This assumes you have a dark terminal (i.e. black background, white text) 
 
 The pallete is defined within the .prompt_colors script and usage is described in more detail in the .ksh_prompt file itself.
 
+__Examples__
+
+![parrot-ksh1](https://user-images.githubusercontent.com/89806345/228074930-1358133a-dd2d-42f6-b94b-ffd95e47e5b5.png)
+![parrot-ksh2](https://user-images.githubusercontent.com/89806345/228074950-267475d7-b786-4b33-8510-675746fe48e5.png)
+![parrot-ksh3](https://user-images.githubusercontent.com/89806345/228074962-b1b33f55-97b1-4904-ba47-063182414d4a.png)
+
+
 Colors available in both regular *and* bright variants:
     - red
     - green
@@ -36,4 +43,3 @@ __Instructions For Use:__
          fi`
 
     4. Enjoy!
-
