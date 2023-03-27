@@ -1,0 +1,44 @@
+#Prompt color definitions for use with .ksh_prompt
+
+# Copyright (C) 2023 Luke C Dahlgren <lcd-code@mailbox.org>
+#
+# Know the risks of dealing with usb devices in Qubes!!! - only use if your threat model allows!!!
+#   <https://www.qubes-os.org/doc/device-handling-security/>
+#
+# This program is free software: you can redistribute it and/or modify it under the terms of the GNU
+# General Public License as published by the Free Software Foundation, version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+# without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+# You should have recieved a copy of the GNU General Public License along with this program; if not,
+# see <https://www.gnu.org/licenses/>.
+
+
+export e="`echo x | tr x '\033'`"
+
+#Define some basic colors using ANSI color codes
+# Regular colors:
+ export red="${e}[31m"
+ export green="${e}[32m"
+ export yellow="${e}[33m"
+ export blue="${e}[34m"
+ export purple="${e}[35m"
+ export cyan="${e}[36m"
+ export white="${e}[37m"
+
+
+ 
+ export bright_red="${e}[91m"
+ export bright_green="${e}[92m"
+ export bright_yellow="${e}[93m"
+ export bright_blue="${e}[94m"
+ export bright_purple="${e}[95m"
+ export bright_cyan="${e}[96m"
+ export bright_white="${e}[97m"
+
+ # Highlighted, bold, and reset to normal
+  export highlt=`tput smso`
+  export bold=`tput bold`
+  export reg=`tput sgr0`

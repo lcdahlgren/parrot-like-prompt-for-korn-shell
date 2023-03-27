@@ -1,0 +1,100 @@
+#!/bin/ksh
+
+# Copyright (C) 2023 Luke C Dahlgren <lcd-code@mailbox.org>
+#
+# This program is free software: you can redistribute it and/or modify it under the terms of the GNU
+# General Public License as published by the Free Software Foundation, version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+# without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+# You should have recieved a copy of the GNU General Public License along with this program; if not,
+# see <https://www.gnu.org/licenses/>.
+
+
+# Bits and pieces taken from here and there on the internet,
+#  with adaptation for Korn Shell by Luke Dahlgren
+# A few resources used:
+#   https://www.w3schools.com/charsets/ref_utf_box.asp
+#   https://gist.github.com/JBlond/2fea43a3049b38287e5e9cefc87b2124
+#   https://linuxcommand.org/lc3_adv_tput.php
+
+
+ if [ -f ~/.prompt_colors ]; then
+   . ~/.prompt_colors
+ else
+   echo -e "ksh_prompt: Error! No prompt_color definitions file found in ~/ \n"
+ fi
+
+##################################################
+#Available colors:
+# red, green, yellow, blue, purple, cyan, white
+# same as above in bright_varient e.g. bright_red
+
+#Available emphases:
+# bold, highlt, reg
+
+
+##################################################
+# DEFINE YOUR DESIRED PROMPT DESIGN HERE
+#  From the Colors and Emphases listed above.
+#  Be sure to include both an emphasis AND color.
+##################################################
+
+export line_color=${reg}${bright_white} 
+export user_color=${reg}${cyan} 
+export at_color=${bold}${bright_yellow} 
+export host_color=${bold}${cyan} 
+export path_color=${reg}${bright_purple} 
+
+##################################################
+
+# Of course this can be condensed, but wanted it
+#  readable/moddable.
+
+# Make sure we can get a hostname to display
+#  using various methods - a tad more portable...
+#  Don't include @ if we can't capture a hostname
+# Also try various methods to get username
+
+if [ -z "$HOSTNAME" ]; then
+  HOSTNAME=`hostname`
+fi
+
+if [ -z "$HOSTNAME" ]; then
+  HOSTNAME=`uname -n`
+fi
+
+if [ ! -z $HOSTNAME ]; then
+  export ourhost="$HOSTNAME"
+fi
+
+
+atsymb=""
+if [ ! -z "$ourhost" ]; then
+  export atsymb="@"
+fi
+
+
+if [ -z "$LOGNAME" ]; then
+  LOGNAME=$USER
+fi
+
+if [ -z "$LOGNAME" ]; then
+  LOGNAME=`id -u -n`
+fi
+
+if [ ! -z $LOGNAME ]; then
+  export ourself="$LOGNAME"
+else
+  export ourself="somebody"
+fi
+
+
+#Format of this prompt made to resemble that in Parrot OS linux
+PS1='
+${line_color}┌─[${user_color}${ourself}${at_color}${atsymb}${host_color}${ourhost}${line_color}]─[${path_color}${PWD}${line_color}]
+${line_color}└─╼ \$ ${white}'
+
+export PS1
