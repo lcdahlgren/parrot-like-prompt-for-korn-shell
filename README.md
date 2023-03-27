@@ -4,7 +4,7 @@ Copyright (c) 2023 by Luke C Dahlgren
 This is a prompt that is compatible with AT&T Korn Shell and KSH93
 Colors and font emphases are customizeable, using the pallete noted within the code comments.
 
-NOTE: This assumes you have a dark terminal (i.e. black background, white text) and so the pallete is reset to regular white text at the end of the prompt, so that your actual prompt text will be white.  You may change this by 
+__WARNING: This assumes you have a dark terminal (i.e. black background, white text) and so the pallete is reset to regular white text at the end of the prompt, so that your actual terminal text will be white.__  IF YOU HAVE A WHITE BACKGROUND, THIS WILL MESS YOU UP!  You can change this down in the actual PS1 string if desired.  Maybe a future enhancement will automate this or at least make it easier if enough people desire it.
 
 The pallete is defined within the .prompt_colors script and usage is described in more detail in the .ksh_prompt file itself.
 
