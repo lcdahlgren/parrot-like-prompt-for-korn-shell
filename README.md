@@ -32,14 +32,14 @@ Font emphases available:
 
 __Instructions For Use:__
 
-    1. place these files either directly in your home directory, or in a subfolder.  *These are technically hidden files (preceded by .), so unless you enable viewing of hidden files in your file browser and/or ls -a in a terminal, you will not see them.  You can easily change this if you wish by removing the ".". If you do this to the .prompt_colors file, be sure to update the reference within the .ksh_prompt script!
+1. place these files either directly in your home directory, or in a subfolder.  *These are technically hidden files (preceded by .), so unless you enable viewing of hidden files in your file browser and/or ls -a in a terminal, you will not see them.  You can easily change this if you wish by removing the ".". If you do this to the .prompt_colors file, be sure to update the reference within the .ksh_prompt script!
 
-    2. If desired, change the color scheme where indicated in the .ksh_prompt script.  Be sure to preserve the braces {} surrounding each color.
+2. If desired, change the color scheme where indicated in the .ksh_prompt script.  Be sure to preserve the braces {} surrounding each color.
 
-    3. Call the script from your ~/.kshrc, or manually if you wish...  I would recommend adding the following to your .kshrc resource file (if you have one, if not, you can create one).  Update reference as necessary:
+3. Call the script from your ~/.kshrc, or manually if you wish...  I would recommend adding the following to your .kshrc resource file (if you have one, if not, you can create one).  Update reference as necessary:
 
         `if [ -f ~/.ksh_prompt ]; then
            . ~/.ksh_prompt
          fi`
 
-    4. Enjoy!
+4. Enjoy!
